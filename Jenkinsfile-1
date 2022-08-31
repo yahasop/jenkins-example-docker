@@ -3,12 +3,6 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage ('Docker Group') {
-      steps {
-        sh 'sudo groupadd docker'
-        sh 'sudo usermod -aG docker ${USER}'
-      }
-    }
     stage('Test') {
       steps {
         sh 'node --version'
